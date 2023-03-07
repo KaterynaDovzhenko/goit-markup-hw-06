@@ -749,6 +749,7 @@ footer {
     position: absolute;
     top: 50%;
     left: 50%;
+    padding: 72px 24px 24px 24px;
 
     color: #000;
     min-width: 408px;
@@ -765,10 +766,10 @@ footer {
 
 .modal-btn {
     position: absolute;
+    top: 24px;
+    right: 24px;
 
     fill: currentColor;
-    margin-top: 24px;
-    margin-right: 24px;
     width: 24px;
     height: 24px;
     background-color: rgba(231, 233, 252, 0.1);
@@ -780,7 +781,6 @@ footer {
     justify-content: center;
 
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
@@ -803,9 +803,6 @@ footer {
 
 /* =======================FORM ======================= */
 
-.form {
-    padding: 72px 24px 24px 24px;
-}
 
 .legend {
     font-weight: 500;
@@ -829,7 +826,7 @@ footer {
 
 .form-field {
     position: relative;
-    margin-bottom: 26px;
+    margin-bottom: 8px;
 
 }
 
@@ -841,9 +838,19 @@ footer {
     width: 360px;
     height: 40px;
     padding-left: 38px;
+    outline: none;
     border: 1px solid rgba(46, 47, 66, 0.2);
     border-radius: 4px;
     transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.textarea {
+    outline: none;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+.textarea:focus {
+    border: 1px solid var(--second-color);
 }
 
 .icon-form {
@@ -864,10 +871,14 @@ footer {
     height: 18px;
 }
 
-.form-input:focus + svg {
+.form-input:focus ~ svg {
     fill: var(--second-color);
-    border: var(--second-color)
 }
+
+.form-input:focus {
+    border: 1px solid var(--second-color);
+}
+
 
 textarea {
     resize: none;
